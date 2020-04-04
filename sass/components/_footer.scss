@@ -1,0 +1,7 @@
+footer {
+    padding: 20px;
+    text-align: center;
+    .logo {
+        @include logo()
+    }
+}

@@ -1,0 +1,40 @@
+.sidedrawer {
+    opacity: 0;
+    position: fixed;
+    top: 0px;
+    right: -500px;
+    text-align: right;
+    height: 100vh;
+    background: $bgBlue;
+    width: 200px;
+    padding: 80px 40px;
+    z-index: 4;
+    transition: .4s ease;
+
+    ul {
+        li {
+            margin: 50px 0;
+        }
+    }
+}
+.sidedrawer.show {
+    right: 0px;
+    opacity: 1;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background: rgba($color: #000000, $alpha: 0.7);
+    width: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: .4s ease ;
+}
+.backdrop.show {
+    display: block;
+    z-index: 3;
+    opacity: 1;
+}

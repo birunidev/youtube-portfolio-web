@@ -1,0 +1,178 @@
+.jumbotron {
+    
+    width: 100%;
+    
+
+    @include tablet {
+        display: flex;
+        position: relative;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 70%;
+        height: 105.5vw;
+        max-height: 667px;
+        background: $bgBlue;
+        top: 0px;
+        left: 30%;
+        z-index: -1;
+        @include tablet {
+        height: 70vw;
+        max-height: 692px;
+
+            width: 60%;
+            left: 25%;
+        }
+        @include desktop {
+            width: 60%;
+            left: 30%;
+            max-height: 707px;
+
+        }
+    }
+
+    &__image {
+        width: 100%;
+        overflow: hidden;
+        // border: 1px solid red;
+        
+        text-align: right;
+
+        @include tablet {
+            position: absolute;
+            order: 2;
+            width: 60%;
+            top: 40px;
+            right: 0px;
+        }
+        img {
+            width: 100%;
+            max-width: 600px;
+        }
+    }
+
+    &__content {
+        padding: 20px;
+        font-family: 'Poppins';
+        @include tablet {
+            
+            order: 1;
+            margin-top: 140px;
+            width: 70%;
+            padding: 2.3rem;
+            
+        }
+        @include desktop {
+            
+            padding: 5rem 6rem;
+        }
+        &__name,&__role {
+            transform: translateX(-40px);
+            opacity: 0;
+        animation: fade 1s ease forwards;
+        }
+        &__name {
+            font-size: 7vw;
+            font-weight: 500;
+            margin: 1rem 0;
+            
+            
+            span {
+                color: $secondaryText;
+            }
+            @include tablet {
+                font-size: 4vw;
+            }
+            @include desktop{
+                margin: 20px 0;
+                // font-size:  3vw;
+            }
+        }
+        &__role {
+            font-size: 10vw;
+            font-weight: bold;
+            margin: 1rem 0;
+            @include tablet {
+                font-size: 6vw;
+            }
+            @include tablet {
+                // font-size: 5vw;
+            }
+        }
+        &__cta {
+            border: none;
+            background: none;
+            margin: 0;
+            font-weight: 500;
+            display: block;
+            outline: none;
+            cursor: pointer;
+
+            img {
+                
+                transition: .4s ease;
+                margin-left: 10px;
+                display: inline-block;
+
+            }
+            &:hover {
+                img {
+                    transform: translateX(10px);
+                }
+            }
+            &:active {
+                color: $secondaryText;
+                img {
+                    transition: translateX(0px);
+                }
+            }
+        }
+        &__socials {
+            @include tablet {
+                transform: translateY(170px);
+            }
+            @include desktop{
+
+                transform: translateY(200px);
+            }
+            
+            ul {
+                display: flex;
+                li {
+                    margin-right: 10px;
+                    a {
+                        color: $baseText;
+                        transition: .4s ease;
+                        display: block;
+                        
+
+                        .iconify {
+                            font-size: 20px;
+                            
+                        }
+                        &:hover {
+                            transform: translateY(-5px);
+                            color: $secondaryText;
+                        }
+                        &:active {
+                            transform: translateY(0px);
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}

@@ -1,0 +1,81 @@
+// fonts
+@import url('https://fonts.googleapis.com/css?family=Inter:400,500,600,700|Poppins:400,500,600,700&display=swap');
+
+
+// abstract
+@import './abstracts/mixins';
+@import './abstracts/variables';
+
+// base
+@import './base/reset';
+
+// components
+@import './components/about';
+@import './components/jumbotron';
+@import './components/navbar';
+@import './components/socials';
+@import './components/sidedrawer';
+@import './components/showcase';
+@import './components/testimonial';
+@import './components/footer';
+
+
+
+
+
+// debugging
+
+// * *:hover { border:2px solid #89A81E }                   /* Solid Green */
+// * * *:hover { border:2px solid #F34607 }                 /* Solid Orange */
+// * * * *:hover { border:2px solid #5984C3 }               /* Solid Blue */
+// * * * * *:hover { border:2px solid #CD1821 }             /* Solid Red */
+// * * * * * *:hover { border:2px dotted #89A81E }          /* Dotted Green */
+// * * * * * * *:hover { border:2px dotted #F34607 }        /* Dotted Orange */
+// * * * * * * * *:hover { border:2px dotted #5984C3 }      /* Dotted Blue */
+// * * * * * * * * *:hover { border:2px dotted #CD1821 } 
+
+// global CSS
+html {
+    scroll-behavior: smooth;
+}
+body {
+    width: 100%;
+    font-family: 'Inter';
+    // overflow-x: hidden !important;
+}
+
+*{
+    box-sizing: border-box;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: $primaryText;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+    @include tablet {
+        width: 90%;
+    }
+    @include desktop {
+        width: 85%;
+    }
+}
+
+section {
+    margin: 50px auto;
+}
+
+p.content{
+    color: $baseText;
+    line-height: 1.5;
+}
